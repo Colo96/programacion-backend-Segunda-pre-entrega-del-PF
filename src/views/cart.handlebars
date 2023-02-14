@@ -1,0 +1,24 @@
+<div class="row">
+    {{#each cartData}}
+    <div class="col s4">
+        <div class="card">
+            <div class="card-image">
+                <img src={{this.image}}>
+                <button id={{this._id}} class="botonClave btn waves-effect waves-light" type="submit" name="action">
+                    <i class="material-icons center">-</i>
+                </button>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>Marca: {{this.brand}}</li>
+                    <li>Modelo: {{this.model}}</li>
+                    <li>RAM: {{this.ram}}</li>
+                    <li>Memoria: {{this.memory}}</li>
+                    <li>Precio: ${{this.price}}</li>
+                    <li>Color: {{this.colour}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
