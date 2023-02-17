@@ -40,5 +40,6 @@ const io = new Server(httpServer);
 io.on('connection', (socket) => {
     socket.on('product', async (cartProduct) => {
         console.log(cartProduct.id);
+        await cartModel.createCart();
     });
 });
