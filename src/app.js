@@ -4,11 +4,6 @@ const path = require('path');
 const apiRouter = require("./routes/app.routes");
 const mongoose = require('mongoose');
 const { Server } = require('socket.io');
-const productsModel = require('./models/products/products.models');
-const cartProductsModel = require('./models/cart/cart.models');
-const { Router } = require('express');
-const router = Router();
-const util = require('util');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -45,8 +40,4 @@ io.on('connection', (socket) => {
     socket.on('product', async (cartProduct) => {
         console.log(cartProduct.id);
     });
-});
-
-router.get('/cart', async (req, res) => {
-
 });
