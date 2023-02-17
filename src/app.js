@@ -4,6 +4,7 @@ const path = require('path');
 const apiRouter = require("./routes/app.routes");
 const mongoose = require('mongoose');
 const { Server } = require('socket.io');
+const cartModel = require('./models/cart/cart.models');
 
 const PORT = process.env.PORT || 8080;
 const app = express();

@@ -6,7 +6,9 @@ const cartProductsModel = require('../../models/cart/cart.models');
 
 router.get('/', async (req, res) => {
     const products = await productsModel.find().lean();
-    res.render("home", { products });
+    const cart = await cartProductsModel.create({});
+    console.log(cart);
+    res.render("home", { products, cart });
 });
 
 router.get('/cart', async (req, res) => {
